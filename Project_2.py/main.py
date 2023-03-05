@@ -3,7 +3,7 @@ import charts
 import filter
 
 def run():
-    data = path.read_csv('Portafolio Digital/Project_2.py/data_p.csv')
+    data = path.read_csv('Digital Portfolio/Project_2.py/data_p.csv')
     f_data = filter.population_by_country(data)
 
     if  len(f_data) > 0:

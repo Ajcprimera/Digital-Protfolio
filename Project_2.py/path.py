@@ -13,5 +13,6 @@ def read_csv(path):
 
 
 if __name__ == '__main__': 
-    data = read_csv('Portafolio Digital/Project_2.py/data_p.csv')
+    data = read_csv('Digital Portfolio/Project_2.py/data_p.csv')
+    #Note: Especify the path of the file
     print(data)
