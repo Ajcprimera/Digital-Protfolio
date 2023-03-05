@@ -1,35 +1,35 @@
-import numpy as np
+import random
 
 class Matrix:
-    def __init__(self, n, m):
-        self.matrix = self.get_matrix(n, m)
-
-    def get_matrix(self,n, m):
-        num = 1
-        matrix = [[None for j in range(m)] for i in range(n)]
-        for i in range(len(matrix)):
-            for j in range(len(matrix[i])):
-                matrix[i][j] = num
-                num += 1
-        return matrix
-
-    def get_readable_matrix_string(self, matrix):
-        strings = []
-        for row in matrix:
-            strings.append(str(row))
-        return '\n'.join(strings)  
+    def __init__(self):
+        self.matrix = []
+        self.rows = 0
+        self.columns = 0
+        self.name = 'Unnamed'
 
     def __str__(self):
-        return self.get_readable_matrix_string(self.matrix)
-    
-    def __len__(self):
-        return len(self.matrix)
-    
-'''M1 = Matrix(3,3)
+        return self.matrix
 
-M2 = Matrix(3,3)
-s = M1.get_matrix(3,3)
-a = np.array(s)
-c = M2.get_matrix(3,3)
-b = np.array(c)
-'''
+    def generate_user_values(self, rows, columns, value = None):
+        number = 1
+        self.rows = rows
+        self.columns = columns
+        self.matrix = [[None for i in range(columns)] for j in range(rows)]
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[i])):
+                value = int(input(f'Input the value number {number}: '))
+                self.matrix[i][j] = value
+                number += 1
+        return self.matrix
+    
+    def generate_random_value(self, rows, columns, value = None):
+        self.rows = rows
+        self.columns = columns
+        lower_number = int(input('Please input the lower number range'))
+        higher_number = int(input('Please input the higher number range'))
+        self.matrix = [[None for i in range(columns)] for j in range(rows)]
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[i])):
+                value = random.randint(lower_number, higher_number)
+                self.matrix[i][j] = value
+        return self.matrix
