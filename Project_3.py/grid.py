@@ -25,8 +25,10 @@ class Matrix:
     def generate_random_value(self, rows, columns, value = None):
         self.rows = rows
         self.columns = columns
-        lower_number = int(input('Please input the lower number range'))
-        higher_number = int(input('Please input the higher number range'))
+        lower_number = int(input('Please input the lower number range: '))
+        higher_number = int(input('Please input the higher number range: '))
+        while higher_number < lower_number:
+            higher_number = int(input('Input a number bigger than the lower number range: '))
         self.matrix = [[None for i in range(columns)] for j in range(rows)]
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[i])):
