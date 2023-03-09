@@ -5,7 +5,6 @@ class Matrix:
         self.matrix = []
         self.rows = 0
         self.columns = 0
-        self.name = 'Unnamed'
 
     def __str__(self):
         return self.matrix

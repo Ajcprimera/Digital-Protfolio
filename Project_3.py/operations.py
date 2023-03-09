@@ -1,5 +1,4 @@
 import numpy as np
-import convertion as cv
 
 class Operation:
     def __init__(self):
@@ -62,4 +61,4 @@ class Operation:
             return print(f'The number of rows is different of number of columns and also the determinant of the matrix is 0')
         else: 
             self. solution = np.linalg.inv(inv)
-            return print(f'The inverse of {inv} is: {self.solution}')
+            return print(f'The diagonal of {inv} is: {self.solution}')
